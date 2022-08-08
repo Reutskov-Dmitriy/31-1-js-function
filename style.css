@@ -1,4 +1,14 @@
 input {
+	margin-top: 10px;
 	width: 30%;
 	height: 2em;
+	border-radius: 3px;
+}
+
+.output {
+	margin-top: 10px;
+	width: 30%;
+	height: 4em;
+	background-color: aquamarine;
+	border-radius: 3px;
 }
