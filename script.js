@@ -3,11 +3,10 @@ document.querySelector('.btn_inputNum').addEventListener('click', () => {
 	let data = document.querySelector('#inputNum').value;
 	innerPerfectNum(+data)
 });
-let perfectNumber
 
-function innerPerfectNum(num) {
-	checkPerfectNum(num)
-	if (num === perfectNumber && perfectNumber !== 0) {
+function innerPerfectNum(numb) {
+
+	if (checkPerfectNum(numb)) {
 		document.querySelector('.output').innerHTML = "Perfect Number";
 	} else {
 		document.querySelector('.output').innerHTML = "It's not a Perfect Number";
@@ -23,11 +22,9 @@ function checkPerfectNum(num) {
 	for (let i = 1; i <= num / 2; i++) {
 		if (num % i == 0) {
 			sum += i;
-			if (num === sum && sum !== 0) {
-				perfectNumber = sum;
-			}
 		}
 	}
+	return sum === num && sum !== 0
 }
 
 
@@ -40,11 +37,10 @@ perfectNumBtn.onclick = function () {
 }
 
 function checkPerfectNums(num1, num2) {
-	let perfectNumbers = [];
+	const perfectNumbers = [];
 	for (let j = num1; j < num2; j++) {
-		checkPerfectNum(j);
-		if (j === perfectNumber && perfectNumber !== 0) {
-			perfectNumbers.push(perfectNumber)
+		if (checkPerfectNum(j)) {
+			perfectNumbers.push(j)
 		}
 	}
 
